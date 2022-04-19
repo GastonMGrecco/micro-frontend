@@ -1,0 +1,19 @@
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container{
+  text-align: center;
+  height:50px;
+  box-shadow:5px 5px 10px gray ;
+  background-color: gold;
+  
+
+}
+.link{
+  text-decoration: none;
+  color: black;
+  margin-right:10px;
+}
