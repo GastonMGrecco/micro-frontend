@@ -1,14 +1,13 @@
-import React, { useState } from "react";
-import { getPokemons } from "../../services/pokemon-services";
+import React, { useState } from 'react';
+import { getPokemons } from '../../services/pokemon-services';
 
 const Pokemons = () => {
   const [pokemons, setPokemons] = useState(null);
 
   const obtenerPokemons = async () => {
-    const aux_pokemons = await getPokemons();
-    setPokemons(aux_pokemons);
-    console.log(aux_pokemons);
-  };
+    const auxPokemons = await getPokemons();
+    setPokemons(auxPokemons);
+  }
 
   return (
     <div>
@@ -16,7 +15,7 @@ const Pokemons = () => {
       {pokemons &&
         pokemons.map((pokemon) => <div key={pokemon.name}>{pokemon.name}</div>)}
     </div>
-  );
-};
+  )
+}
 
 export default Pokemons;
