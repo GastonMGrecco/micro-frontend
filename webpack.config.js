@@ -1,5 +1,7 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
+
+const deps = require('./package.json').dependencies;
 
 module.exports = {
   mode: 'development',
@@ -39,8 +41,13 @@ module.exports = {
       exposes: {
         './MicroFrontendApp': './src/App.js' // This is an example
       },
-
-      shared: ['react']
+      shared: {
+        ...deps,
+        react: {
+          singleton: true,
+          requiredVersion: deps.react
+        }
+      }
     })
   ]
-}
+};

@@ -18,6 +18,7 @@
         "react"
     ],
     "rules": {
-        "omitLastInOneLineBlock": true
+        "no-console": 2,
+        "semi": [2, "always"]
     }
 }

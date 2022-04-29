@@ -7,7 +7,7 @@ const Pokemons = () => {
   const obtenerPokemons = async () => {
     const auxPokemons = await getPokemons();
     setPokemons(auxPokemons);
-  }
+  };
 
   return (
     <div>
@@ -15,7 +15,7 @@ const Pokemons = () => {
       {pokemons &&
         pokemons.map((pokemon) => <div key={pokemon.name}>{pokemon.name}</div>)}
     </div>
-  )
-}
+  );
+};
 
 export default Pokemons;
